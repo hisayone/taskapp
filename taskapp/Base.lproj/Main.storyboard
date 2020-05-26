@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bCH-PN-c8y">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,25 +16,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wrx-YE-WsE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="FsB-KE-Dii" detailTextLabel="ctY-51-c8N" style="IBUITableViewCellStyleSubtitle" id="WHv-Vy-mgU">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WHv-Vy-mgU" id="b3T-y5-fAP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FsB-KE-Dii">
-                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20.000000000000004" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ctY-51-c8N">
-                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -45,13 +45,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SLY-sE-41x">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ecL-Yv-nxN"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wrx-YE-WsE" secondAttribute="bottom" id="07q-pA-bzT"/>
+                            <constraint firstItem="SLY-sE-41x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Xm-Y2-HZG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wrx-YE-WsE" secondAttribute="trailing" id="7Fs-Ti-57p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wrx-YE-WsE" secondAttribute="bottom" id="J5a-lf-R9P"/>
-                            <constraint firstItem="wrx-YE-WsE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JOu-hW-cfv"/>
+                            <constraint firstItem="SLY-sE-41x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Abx-8N-Vpy"/>
+                            <constraint firstItem="wrx-YE-WsE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KRw-PC-Kbv"/>
+                            <constraint firstItem="SLY-sE-41x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UCb-wl-OMi"/>
+                            <constraint firstItem="wrx-YE-WsE" firstAttribute="top" secondItem="SLY-sE-41x" secondAttribute="bottom" id="aoK-x1-vCN"/>
                             <constraint firstItem="wrx-YE-WsE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gsx-2Q-pZc"/>
+                            <constraint firstItem="SLY-sE-41x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lIn-uB-yYN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -63,6 +75,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="SLY-sE-41x" id="kxn-1H-fgX"/>
                         <outlet property="tableView" destination="wrx-YE-WsE" id="aIz-Af-Xwk"/>
                         <segue destination="rWV-er-zVd" kind="show" identifier="cellSegue" id="ReY-Q1-M6z"/>
                     </connections>
@@ -74,7 +87,7 @@
         <!--Input View Controller-->
         <scene sceneID="bvX-YZ-n5T">
             <objects>
-                <viewController id="rWV-er-zVd" customClass="inputViewController" customModule="taskapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rWV-er-zVd" customClass="InputViewController" customModule="taskapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="waZ-bN-GAM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,19 +126,28 @@
                                     <constraint firstAttribute="height" constant="120" id="RU5-W2-e1V"/>
                                 </constraints>
                             </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBI-ed-Uzc">
+                                <rect key="frame" x="10" y="464" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="dwX-pP-kLe" firstAttribute="trailing" secondItem="eBI-ed-Uzc" secondAttribute="trailing" constant="10" id="0k3-hs-VDk"/>
                             <constraint firstItem="dwX-pP-kLe" firstAttribute="trailing" secondItem="bNt-eU-US3" secondAttribute="trailing" constant="10" id="6UI-fE-tNg"/>
                             <constraint firstItem="dwX-pP-kLe" firstAttribute="trailing" secondItem="VrS-5M-yB7" secondAttribute="trailing" constant="10" id="Bii-Aa-hg1"/>
                             <constraint firstItem="8SP-7g-JK0" firstAttribute="trailing" secondItem="dwX-pP-kLe" secondAttribute="trailing" id="FCg-Lk-hIu"/>
                             <constraint firstItem="dwX-pP-kLe" firstAttribute="trailing" secondItem="4HC-OP-D9l" secondAttribute="trailing" constant="10" id="QCY-gh-eEH"/>
                             <constraint firstItem="8SP-7g-JK0" firstAttribute="top" secondItem="bNt-eU-US3" secondAttribute="bottom" constant="10" id="T0G-Y8-feJ"/>
+                            <constraint firstItem="eBI-ed-Uzc" firstAttribute="centerX" secondItem="waZ-bN-GAM" secondAttribute="centerX" id="Z0E-qJ-JJI"/>
                             <constraint firstItem="bNt-eU-US3" firstAttribute="leading" secondItem="dwX-pP-kLe" secondAttribute="leading" constant="10" id="agD-ae-NyQ"/>
+                            <constraint firstItem="eBI-ed-Uzc" firstAttribute="top" secondItem="8SP-7g-JK0" secondAttribute="bottom" constant="10" id="ayk-Wj-eSt"/>
                             <constraint firstItem="bNt-eU-US3" firstAttribute="top" secondItem="4HC-OP-D9l" secondAttribute="bottom" constant="10" id="bwy-AD-LMV"/>
                             <constraint firstItem="VrS-5M-yB7" firstAttribute="leading" secondItem="dwX-pP-kLe" secondAttribute="leading" constant="10" id="cCv-ho-uWQ"/>
                             <constraint firstItem="SbS-w4-Mtf" firstAttribute="top" secondItem="dwX-pP-kLe" secondAttribute="top" constant="10" id="dKm-T4-jCZ"/>
                             <constraint firstItem="dwX-pP-kLe" firstAttribute="trailing" secondItem="SbS-w4-Mtf" secondAttribute="trailing" constant="10" id="epq-eZ-sHH"/>
+                            <constraint firstItem="eBI-ed-Uzc" firstAttribute="leading" secondItem="dwX-pP-kLe" secondAttribute="leading" constant="10" id="hj4-k5-a9W"/>
                             <constraint firstItem="4HC-OP-D9l" firstAttribute="leading" secondItem="dwX-pP-kLe" secondAttribute="leading" constant="10" id="klT-kQ-Vyg"/>
                             <constraint firstItem="VrS-5M-yB7" firstAttribute="top" secondItem="SbS-w4-Mtf" secondAttribute="bottom" constant="10" id="nJJ-9n-ggu"/>
                             <constraint firstItem="SbS-w4-Mtf" firstAttribute="leading" secondItem="dwX-pP-kLe" secondAttribute="leading" constant="10" id="pSl-E8-qlf"/>
@@ -135,6 +157,12 @@
                         <viewLayoutGuide key="safeArea" id="dwX-pP-kLe"/>
                     </view>
                     <navigationItem key="navigationItem" id="KfO-ag-kae"/>
+                    <connections>
+                        <outlet property="categoryTextField" destination="eBI-ed-Uzc" id="DW9-ul-pqW"/>
+                        <outlet property="contentsTextView" destination="bNt-eU-US3" id="b6W-zj-1ce"/>
+                        <outlet property="datePicker" destination="8SP-7g-JK0" id="qfv-9J-iwt"/>
+                        <outlet property="titleTextField" destination="VrS-5M-yB7" id="IeF-iI-jcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29G-3f-TpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
