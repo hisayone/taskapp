@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let predicate = NSPredicate(format: "category = %@", searchBar.text!)
+        let predicate = NSPredicate(format: "category contains %@", searchBar.text!)
         taskArray = realm.objects(Task.self).filter(predicate)
         tableView.reloadData()
     }
