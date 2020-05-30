@@ -25,13 +25,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
     
-    func searchBarSearchButtonClicked(searchBar:UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let predicate = NSPredicate(format: "category = %@", searchBar.text!)
         taskArray = realm.objects(Task.self).filter(predicate)
         tableView.reloadData()
     }
-        
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
         tableView.reloadData()
     }
