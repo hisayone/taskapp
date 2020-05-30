@@ -25,23 +25,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
     
-    //検索結果の配列
-    var searchResult:[String] = []
-    
-    func searchBarSearchButtonClicked(_ searchBar:UISearchBar) {
+    func searchBarSearchButtonClicked(searchBar:UISearchBar) {
         let predicate = NSPredicate(format: "category = %@", searchBar.text!)
-        let searchResult = realm.objects(Task.self).filter(predicate)
-        self.view.endEditing(true)
-        taskArray = searchResult
-        self.tableView.reloadData()
+        taskArray = realm.objects(Task.self).filter(predicate)
+        tableView.reloadData()
     }
         
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-        self.view.endEditing(true)
-        searchBar.text = ""
-        self.tableView.reloadData()
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+        tableView.reloadData()
     }
     
 
@@ -57,9 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //何も入力されていなくてもReturnキーを押せるようにする。
         searchBar.enablesReturnKeyAutomatically = false
     }
-    
-    
-    
         
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
