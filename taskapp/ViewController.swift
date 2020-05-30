@@ -24,40 +24,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)  // ←追加
-    
-    var search = UISearchBar()
-    
     //検索結果の配列
+    var searchResult:[String] = []
     
+    func searchBarSearchButtonClicked(_ searchBar:UISearchBar) {
+        let predicate = NSPredicate(format: "category = %@", searchBar.text!)
+        let searchResult = realm.objects(Task.self).filter(predicate)
+        self.view.endEditing(true)
+        taskArray = searchResult
+        self.tableView.reloadData()
+    }
+        
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        self.view.endEditing(true)
+        searchBar.text = ""
+        self.tableView.reloadData()
+        taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+    }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
+
                 //結果表示用のビューコントローラーに自分を設定する。
         searchBar.delegate = self
         searchBar.showsCancelButton = true
         //何も入力されていなくてもReturnキーを押せるようにする。
         searchBar.enablesReturnKeyAutomatically = false
-        
-        search = UISearchBar()
-        search.delegate = self
     }
     
     
-    func searchBarSearchButtonClicked(searchBar:UISearchBar) {
-        let predicate = NSPredicate(format: "category = %@", searchBar.text!)
-        var searchResult = realm.objects(Task.self).filter(predicate)
-    }
-        
     
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        
-    }
         
     // データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
